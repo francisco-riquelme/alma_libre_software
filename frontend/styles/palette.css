@@ -1,0 +1,73 @@
+/* 🎨 PALETA DE COLORES OFICIAL - ALMALIBRE */
+
+:root {
+  /* Colores principales */
+  --primary: #1E90FF;           /* Azul calma */
+  --primary-soft: #EAF4FF;      /* Azul pastel suave */
+  --accent: #CAB3FF;            /* Morado empatía */
+  --background: #FFFFFF;         /* Fondo blanco */
+  --surface: #F7F8FA;            /* Superficie gris suave */
+  --text-main: #0E1117;          /* Texto principal oscuro */
+
+  /* Colores emocionales secundarios */
+  --green-soft: #68CC9A;         /* Verde contención */
+  --yellow-soft: #FFEEAA;        /* Amarillo luz interior */
+  --pink-soft: #FFE0F0;          /* Rosa empatía */
+
+  /* Fondos de iconos (pasteles) */
+  --icon-blue: #EAF4FF;          /* Azul pastel */
+  --icon-purple: #F4E8FF;        /* Morado pastel */
+  --icon-pink: #FFEAF4;          /* Rosa pastel */
+}
+
+/* Utilidades de color para Tailwind */
+@layer utilities {
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  
+  .bg-primary-soft {
+    background-color: var(--primary-soft);
+  }
+  
+  .bg-accent {
+    background-color: var(--accent);
+  }
+  
+  .bg-surface {
+    background-color: var(--surface);
+  }
+  
+  .text-primary {
+    color: var(--primary);
+  }
+  
+  .text-main {
+    color: var(--text-main);
+  }
+  
+  .bg-green-soft {
+    background-color: var(--green-soft);
+  }
+  
+  .bg-yellow-soft {
+    background-color: var(--yellow-soft);
+  }
+  
+  .bg-pink-soft {
+    background-color: var(--pink-soft);
+  }
+  
+  .bg-icon-blue {
+    background-color: var(--icon-blue);
+  }
+  
+  .bg-icon-purple {
+    background-color: var(--icon-purple);
+  }
+  
+  .bg-icon-pink {
+    background-color: var(--icon-pink);
+  }
+}
+

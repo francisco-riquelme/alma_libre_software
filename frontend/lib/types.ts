@@ -40,3 +40,25 @@ export interface ModerationAction {
   createdAt: Date
 }
 
+export type UserRole = 'admin' | 'user' | 'mentor'
+
+export interface User {
+  _id?: string
+  email: string
+  password: string // Hash bcrypt
+  username: string
+  role: UserRole
+  isActive: boolean
+  createdAt: Date
+  updatedAt?: Date
+  lastLogin?: Date
+}
+
+export interface UserPublic {
+  _id?: string
+  email: string
+  username: string
+  role: UserRole
+  createdAt: Date
+}
+

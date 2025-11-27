@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'AlmaLibre',
-  description: 'Espacio seguro y anónimo donde las personas puedan desahogarse y recibir apoyo empático',
+  title: 'AlmaLibre - Un espacio seguro para tu bienestar emocional',
+  description: 'Comparte lo que sientes sin miedo. Encuentra apoyo genuino en una comunidad que entiende y valora tu bienestar mental.',
 }
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className="font-sans">{children}</body>
     </html>
   )
 }
