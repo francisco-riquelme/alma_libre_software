@@ -16,7 +16,7 @@ async function initializeDatabase() {
     console.log(`✅ Conectado a la base de datos: ${db.databaseName}\n`)
 
     // Crear colecciones (MongoDB las crea automáticamente al insertar, pero las listamos para verificar)
-    const collections = ['posts', 'comments', 'reactions', 'moderation_actions']
+    const collections = ['users', 'posts', 'comments', 'reactions', 'moderation_actions']
     
     console.log('📁 Verificando/creando colecciones...')
     
@@ -42,6 +42,14 @@ async function initializeDatabase() {
     // Crear índices para optimizar las consultas
     console.log('\n📊 Creando índices...')
     
+    // Índices para users
+    const usersCollection = db.collection('users')
+    await usersCollection.createIndex({ email: 1 }, { unique: true })
+    await usersCollection.createIndex({ username: 1 }, { unique: true })
+    await usersCollection.createIndex({ role: 1 })
+    await usersCollection.createIndex({ isActive: 1 })
+    console.log('   ✓ Índices creados para "users"')
+
     // Índices para posts
     const postsCollection = db.collection('posts')
     await postsCollection.createIndex({ createdAt: -1 })

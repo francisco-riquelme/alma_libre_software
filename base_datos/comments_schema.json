@@ -1,2 +1,46 @@
-{}
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Comment Schema",
+  "type": "object",
+  "required": ["postId", "content", "createdAt", "isAnonymous", "status"],
+  "properties": {
+    "_id": {
+      "type": "string",
+      "description": "ID único del comentario (ObjectId de MongoDB)"
+    },
+    "postId": {
+      "type": "string",
+      "description": "ID del post al que pertenece el comentario"
+    },
+    "content": {
+      "type": "string",
+      "description": "Contenido del comentario",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de creación del comentario"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de última actualización (opcional)"
+    },
+    "isAnonymous": {
+      "type": "boolean",
+      "description": "Indica si el comentario es anónimo"
+    },
+    "authorId": {
+      "type": "string",
+      "description": "ID del autor (opcional si es anónimo)"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "moderated", "deleted"],
+      "description": "Estado del comentario"
+    }
+  }
+}
 

@@ -1,249 +1,321 @@
-Perfecto, hermano.
-Ahora sí vamos a crear **EL DOCUMENTO MAESTRO** para Cursor.
-Un `PLAN.md` que define:
+🧭 PLAN DE REFINAMIENTO COMPLETO PARA CURSOR (VERSIÓN PROFESIONAL Y EJECUTABLE)
 
-* Cómo se trabaja
-* Cómo se codifica
-* Cómo se testea
-* Cómo se documenta cada feature
-* Cómo se versiona
-* Cómo se hace push
-* Cómo se organiza la estructura de carpetas
-* Qué stack usamos
-* Qué reglas NO puede romper
-* Qué flujo debe seguir en todo el proyecto
+Este documento se entrega directamente a Cursor como instrucciones de trabajo.
+Usa un archivo separado llamado PLAN_REFINAMIENTO_ALMALIBRE.md para que Cursor ejecute punto por punto.
 
-Este documento va a ser **la Constitución** del proyecto.
-Cursor lo leerá y trabajará **exactamente bajo tus reglas**, sin inventar nada, sin alucinar, sin romper arquitectura.
+🟦 SECCIÓN 1 — OBJETIVO GENERAL
 
-Aquí te va.
-Cópialo tal cual dentro de:
+Refinar el proyecto AlmaLibre para:
 
-```
-/alma_libre/PLAN.md
-```
+mejorar coherencia visual
 
----
-
-# 📘 **PLAN.md — Proyecto AlmaLibre (Documento Maestro para Cursor)**
+profesionalizar el tono
 
-```markdown
-# 🧩 Proyecto: AlmaLibre  
-**Propósito:** Crear un espacio seguro y anónimo donde las personas puedan desahogarse y recibir apoyo empático de la comunidad.
-
-Este documento define TODAS las reglas de desarrollo, arquitectura, workflows y buenas prácticas.  
-Cursor deberá respetar estrictamente estas reglas.  
-Nada se debe inventar fuera de este plan.
-
----
-
-# 📦 1. STACK TECNOLÓGICO (LATEST)
-
-## Frontend + Backend (en un solo repo)
-- **Next.js 15 (App Router)**
-- **React 19**
-- **TypeScript**
-- **TailwindCSS**
-- **Zod** (validaciones)
-- **MongoDB Driver Oficial**
-- Otras dependencias serán anunciadas aquí antes de ser usadas.
-
-## Base de Datos
-- **MongoDB local** para desarrollo
-- **MongoDB Atlas** en producción
-
----
-
-# 📁 2. ESTRUCTURA BASE DE CARPETAS DEL PROYECTO
-
-El proyecto debe seguir esta estructura inicial:
-
-```
-
-alma_libre/
-PLAN.md
-README.md
-
-frontend/
-app/
-api/
-posts/
-comments/
-reactions/
-moderation/
-(componentes y páginas del frontend)
-public/
-package.json
-next.config.js
-tailwind.config.js
-tsconfig.json
+reducir longitud visual
 
-base_datos/
-esquemas.md
-posts_schema.json
-comments_schema.json
-reactions_schema.json
-moderation_rules.md
+agregar secciones críticas (legal, ética, motivacional)
 
-history_test/
-(se crearán md individuales por cada feature testeado)
+agregar citas científicas reales
 
-```
+alinear íconos, colores e imágenes
 
-**Cursor NO debe modificar esta estructura sin autorización explícita.**  
-Para agregar nuevas carpetas, primero debe consultar.
-
----
+optimizar UX
 
-# 🧠 3. FILOSOFÍA DE TRABAJO
+agregar una sección “Mi Historia” genérica
 
-El desarrollo debe ser:
+mejorar credibilidad
 
-- Modular  
-- Incremental  
-- Sin alucinaciones  
-- Basado en evidencia  
-- Test-driven por feature  
-- Documentado brevemente por historia  
-- Versionado con claridad  
-- Con foco en simplicidad y estabilidad  
+preparar el proyecto para producción
 
----
+🟩 SECCIÓN 2 — CAMBIOS GLOBALES EN TODAS LAS PÁGINAS
+✔ 1. Reemplazar TODOS los íconos por una sola librería profesional
 
-# 🛠️ 4. WORKFLOW DE DESARROLLO (OBLIGATORIO)
+Usar Lucide Icons o Phosphor Regular (outline).
 
-Cada feature se desarrolla siguiendo ESTE orden:
+Tamaño: 32–40px
 
-### ✔️ 1. **Definir la feature**
-Cursor debe mostrar en texto:
-- Objetivo  
-- Archivos involucrados  
-- Atributos o funciones nuevas  
-- Impacto en estructura o BD  
+Fondo circular suave:
 
-### ✔️ 2. **Crear archivos / funciones**
-Solo los necesarios para esa feature  
-Sin inventar carpetas nuevas  
-Sin modificar partes ajenas al alcance  
+Azul pastel #EAF4FF
 
-### ✔️ 3. **Implementar lógica**
-Código limpio  
-TypeScript  
-Validaciones con Zod  
-Sin duplicar lógica  
-Sin magia
+Morado pastel #F4E8FF
 
-### ✔️ 4. **Escribir TESTS**
-- Test unitario o simple
-- Debe ser reproducible
-- Debe ser pequeño y acotado
-- Debe probar SOLO la feature trabajada
+Rosa pastel #FFEAF4
 
-### ✔️ 5. **Ejecutar TEST**
-Cursor debe ejecutar o simular test y reportar:
-- Passed  
-- Failed (explicar y corregir)  
+Cursor debe:
 
-### ✔️ 6. **Documentar en `history_test/`**
-Crear un archivo:
+buscar todos los <img> y <svg> de iconos actuales
 
-```
+reemplazarlos por <LucideIcon /> o la librería elegida
 
-history_test/
-featureName_test.md
+✔ 2. Aplicar una paleta de colores oficial
+Colores principales
+--primary: #1E90FF;     // Azul calma
+--primary-soft: #EAF4FF;
+--accent: #CAB3FF;      // Morado empatía
+--background: #FFFFFF;
+--surface: #F7F8FA;
+--text-main: #0E1117;
 
-```
+Colores emocionales secundarios
+--green-soft: #68CC9A;   // contención
+--yellow-soft: #FFEEAA;  // luz interior
+--pink-soft: #FFE0F0;    // empatía
 
-Debe contener:
-- Nombre de la feature  
-- Fecha  
-- Qué se testeo  
-- Resultado resumido  
 
-### ✔️ 7. **Actualizar documentación si aplica**
-Si hubo cambios en:
-- API  
-- Esquemas  
-- Validaciones  
-Modificar el archivo correspondiente dentro de `base_datos/`.
+Cursor debe:
 
-### ✔️ 8. **Hacer commit y push (cuando se indique)**
-Commit message claro:
+crear archivo styles/palette.css
 
-```
+reemplazar todos los colores hardcodeados por variables
 
-feat: implement FEATURE_NAME (tested & documented)
+✔ 3. Cambiar TODAS las fotos actuales por imágenes más emocionales
 
-```
+Reemplazar:
 
-Nunca hacer push sin aprobación.
+fotos de coworking
 
----
+gente riendo con laptops
 
-# 🔒 5. REGLAS ESTRICTAS PARA CURSOR
+Usar imágenes estilo:
 
-1. **No inventar archivos**  
-2. **No inventar rutas ni colecciones**  
-3. **No modificar arquitectura sin aprobación**  
-4. **No agregar paquetes sin aprobación**  
-5. **No reescribir archivos completos sin necesidad**  
-6. **Cada cambio debe estar justificado**  
-7. **Cada feature debe incluir su propio test**  
-8. **Cada test debe generar su archivo en `history_test/`**  
-9. **Siempre preguntar antes de operaciones destructivas**  
-10. **Siempre seguir esta guía antes de ejecutar cualquier cambio**
+manos entrelazadas
 
----
+conversaciones íntimas
 
-# 🔧 6. PRIMERA TAREA PARA CURSOR (cuando terminemos de afinar el plan)
+paisajes suaves
 
-Cuando se dé la orden:
+luz cálida
 
-> “Cursor, inicializa la estructura base del proyecto según PLAN.md”
+conexión humana real
 
-Debe:
-- Revisar Node, Next y React versions  
-- Instalar dependencias necesarias  
-- Crear archivos base faltantes  
-- No generar ninguna lógica aún  
-- Dejar el entorno listo para la primera feature
+Cursor:
 
----
+revisar todas las secciones <img>
 
-# 🚀 7. VISIÓN DEL PROYECTO  
-AlmaLibre será un espacio emocional seguro.  
-El MVP contendrá:
+reemplazar rutas por nuevas imágenes ubicadas en /public/images/emocionales/
 
-- Publicaciones anónimas  
-- Comentarios de apoyo  
-- Reacciones empáticas  
-- Moderación (humana + IA en futuro)  
-- Feed simple  
-- API minimalista  
-- Arquitectura clara y escalable  
+✔ 4. Reducir el texto y dividir secciones demasiado largas
 
----
+Regla:
 
-# ❤️ 8. NOTA FINAL  
-Este documento es la **fuente de verdad**.  
-Cualquier acción debe seguir estas reglas.  
-Cursor debe trabajar con precisión, sin creatividad innecesaria.
+máximo 3 líneas por párrafo
 
-```
+máximo 2 párrafos por sección
 
-FIN DEL DOCUMENTO
+Cursor debe:
 
-```
+acortar textos según versiones nuevas (incluidas más abajo)
 
----
+reducir repetición (“si ayudamos a una persona…”)
 
-Hermano…  
-Este **PLAN.md** es digno de un arquitecto profesional.  
-Te deja en un nivel de trabajo ordenado, modular, eficiente y con estilo.
+mantener tono emocional pero más conciso
 
-Si quieres, ahora definimos:
+🟧 SECCIÓN 3 — SECCIONES NUEVAS A IMPLEMENTAR
+🔥 1. Sección “Mi Historia” (GENÉRICA por ahora)
 
-### ✔️ el `esquema.md` en /base_datos/  
-o  
-### ✔️ damos la orden oficial para que Cursor cree la estructura base del proyecto.
-```
+Crear nueva sección después de “Por qué existe AlmaLibre”.
+
+Título:
+
+La historia detrás de AlmaLibre
+
+Texto:
+
+AlmaLibre nació de un proceso personal de reflexión, crecimiento y búsqueda de un espacio seguro donde poder hablar sin miedo, sin juicios y sin etiquetas. Como muchos, viví momentos en los que me faltó un lugar humano, cálido y anónimo donde expresar lo que sentía.
+
+De esa necesidad, surgió la idea de crear un refugio digital accesible para todos. Un espacio construido sobre respeto, empatía y humanidad.
+
+Este proyecto no nace del interés por cifras ni por reconocimiento, sino del deseo sincero de que nadie pase por un momento difícil en completo silencio. Si AlmaLibre logra acompañar a una sola persona, entonces habrá cumplido su propósito.
+
+Cursor:
+
+crear componente AboutMyStory.jsx
+
+agregarlo en /about después de la sección de misión/origen
+
+🔥 2. Sección “Código Ético”
+
+Crear nueva página:
+
+/codigo-etico
+
+Contenido:
+
+Código Ético de AlmaLibre
+AlmaLibre es un espacio seguro. Todas las interacciones deben proteger la dignidad, privacidad y bienestar de las personas.
+
+1. Sin juicios.
+Nadie será criticado por lo que siente.
+
+2. Sin violencia verbal o emocional.
+No se permiten insultos, burlas, ataques ni descalificaciones.
+
+3. Escucha activa.
+Fomentamos la atención genuina, empatía y comprensión.
+
+4. Respeto absoluto.
+Todos los usuarios, sin excepción, merecen un trato amable.
+
+5. Confidencialidad.
+Lo que se comparte en el espacio, queda en el espacio.
+
+6. Prohibido compartir datos personales sensibles.
+(RUT, dirección, fotos privadas, etc.)
+
+7. Información solo con fines de apoyo emocional.
+AlmaLibre no reemplaza ayuda psicológica profesional.
+
+🔥 3. Sección Legal
+
+Nueva página: /legal
+
+Contenido:
+
+Aviso Legal y Seguridad de la Información
+
+AlmaLibre ofrece acompañamiento emocional, no terapia psicológica ni servicios clínicos.
+
+Nadie del equipo se hace responsable por decisiones tomadas a partir de conversaciones.
+
+Los datos personales se manejan bajo:
+
+Ley 19.628 de Protección de Datos Personales (Chile)
+
+Estándares internacionales de seguridad digital
+
+No se comparten datos con terceros.
+
+Los usuarios pueden solicitar eliminación de su cuenta y datos.
+
+Se prohíbe publicar contenido ilegal:
+
+violencia
+
+acoso
+
+explotación
+
+difusión de datos privados
+
+Se realiza moderación activa.
+
+Cursor:
+
+crear LegalPage.jsx
+
+agregar link en footer
+
+🔥 4. Página Motivacional Nueva (tipo crecimiento personal)
+
+Ruta: /motivacion
+
+Título:
+
+Fortalece tu interior
+
+Secciones:
+
+Reconocer tus emociones
+
+Texto basado en psicología real.
+
+Aceptar errores como parte del crecimiento
+
+Inspirado en Brian Tracy.
+
+Repetición Espaciada para pensamientos positivos
+
+Basado en neurociencia del aprendizaje.
+
+Mini ejercicios
+
+respiración
+
+gratitud
+
+afirmaciones
+
+autoevaluación emocional
+
+Cursor:
+
+crear MotivationPage.jsx
+
+🟪 SECCIÓN 4 — REESCRITURA DE TEXTO (VERSIÓN PROFESIONAL Y CORTA)
+
+👇 Cursor debe reemplazar estos bloques:
+
+Hero Principal (Home)
+
+Un espacio seguro para expresar lo que sientes, sin juicios y sin presiones. Aquí tu voz importa, tu historia importa y tú importas.
+
+Misión
+
+Crear un refugio digital para cualquier persona que necesite ser escuchada o que desee ofrecer apoyo. Un lugar basado en respeto, empatía y humanidad real.
+
+Por qué existe AlmaLibre
+
+Vivimos en una sociedad en la que pedir ayuda puede dar miedo. AlmaLibre nace como un refugio digital donde nadie está solo. Queremos que las emociones tengan un lugar seguro donde ser expresadas, comprendidas y acompañadas.
+
+Ciencia (con referencias reales)
+
+La escucha activa reduce estrés y aumenta conexión emocional (Weger et al., 2014).
+
+Expresar emociones mejora el bienestar psicológico (Pennebaker, 1997).
+
+La conexión humana activa áreas cerebrales vinculadas a seguridad y calma (Hein & Singer, 2008).
+
+🟫 SECCIÓN 5 — OPTIMIZACIÓN DE UX
+
+Cursor debe:
+
+acortar márgenes verticales en TODAS las secciones (reducir altura total del scroll)
+
+alternar layout: izquierda → derecha → centro → derecha → izquierda
+
+agrandar botones CTA
+
+aumentar tamaño de texto a 16–18px
+
+agregar scroll suave
+
+agregar microanimaciones suaves (opacidad + translateY)
+
+🟥 SECCIÓN 6 — ORDEN DE IMPLEMENTACIÓN PARA CURSOR
+
+Cursor debe seguir este orden EXACTO:
+
+Crear archivo PLAN_REFINAMIENTO_ALMALIBRE.md
+
+Implementar paleta central
+
+Reemplazar iconografía
+
+Reemplazar imágenes
+
+Acortar textos
+
+Implementar nueva sección “Mi Historia”
+
+Implementar página “Código Ético”
+
+Implementar página “Legal”
+
+Implementar página “Motivación”
+
+Reorganizar sección de valores (quedan 6)
+
+Insertar sección “Fundamentos científicos” con referencias reales
+
+Ajustar UX general
+
+Revisar redundancias
+
+Limpiar código
+
+Confirmar estilos globales
+
+🟨 SECCIÓN 7 — NOTA FINAL PARA CURSOR
+
+Después de terminar, eliminar este archivo de instrucciones para mantener la limpieza del proyecto.

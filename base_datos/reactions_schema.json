@@ -1,2 +1,35 @@
-{}
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Reaction Schema",
+  "type": "object",
+  "required": ["type", "createdAt"],
+  "properties": {
+    "_id": {
+      "type": "string",
+      "description": "ID único de la reacción (ObjectId de MongoDB)"
+    },
+    "postId": {
+      "type": "string",
+      "description": "ID del post (opcional, si la reacción es a un comentario)"
+    },
+    "commentId": {
+      "type": "string",
+      "description": "ID del comentario (opcional, si la reacción es a un post)"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["support", "empathy", "love", "strength"],
+      "description": "Tipo de reacción empática"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de creación de la reacción"
+    },
+    "authorId": {
+      "type": "string",
+      "description": "ID del autor de la reacción (opcional)"
+    }
+  }
+}
 

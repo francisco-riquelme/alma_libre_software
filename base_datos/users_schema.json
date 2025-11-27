@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "User Schema",
+  "type": "object",
+  "required": ["email", "password", "username", "role", "isActive", "createdAt"],
+  "properties": {
+    "_id": {
+      "type": "string",
+      "description": "ID único del usuario (ObjectId de MongoDB)"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email único del usuario"
+    },
+    "password": {
+      "type": "string",
+      "description": "Hash bcrypt de la contraseña",
+      "minLength": 60
+    },
+    "username": {
+      "type": "string",
+      "description": "Username único del usuario",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "role": {
+      "type": "string",
+      "enum": ["admin", "user", "mentor"],
+      "description": "Rol del usuario en el sistema"
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "Indica si el usuario está activo"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de creación del usuario"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de última actualización (opcional)"
+    },
+    "lastLogin": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha del último inicio de sesión (opcional)"
+    }
+  }
+}
+

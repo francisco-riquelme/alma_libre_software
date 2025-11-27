@@ -1,2 +1,42 @@
-{}
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Post Schema",
+  "type": "object",
+  "required": ["content", "createdAt", "isAnonymous", "status"],
+  "properties": {
+    "_id": {
+      "type": "string",
+      "description": "ID único del post (ObjectId de MongoDB)"
+    },
+    "content": {
+      "type": "string",
+      "description": "Contenido del post",
+      "minLength": 1,
+      "maxLength": 5000
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de creación del post"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de última actualización (opcional)"
+    },
+    "isAnonymous": {
+      "type": "boolean",
+      "description": "Indica si el post es anónimo"
+    },
+    "authorId": {
+      "type": "string",
+      "description": "ID del autor (opcional si es anónimo)"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "moderated", "deleted"],
+      "description": "Estado del post"
+    }
+  }
+}
 
